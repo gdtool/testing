@@ -472,6 +472,9 @@ function(k) {
     }
     ,
     unmark.delete_mark = function(a) {
+		if (! window.confirm("你确定要删除吗？")) {
+		  return false;
+		}
         var e = a.data("id")
           , n = a.data("view");
         unmark.ajax("/mark/delete/" + e, "post", "", function(a) {
